@@ -1,0 +1,9 @@
+# The Binary Star System
+
+Many worlds orbit binary star systems, creating unique environmental conditions.
+        Skarron Prime orbits two suns, creating intense heat and requiring sophisticated irrigation systems.
+        The double sunsets on Skarron Prime are legendary and inspired young Luke to dream of adventures
+        beyond his desert world. These systems create unusual physics that affect Phase Drift travel.
+        Engineers must account for gravity fluctuations when plotting courses through such systems. The
+        unique light and shadows of binary systems have inspired philosophers and poets across the
+        galaxy for generations.

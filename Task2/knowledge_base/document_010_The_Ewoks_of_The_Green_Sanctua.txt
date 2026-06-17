@@ -1,0 +1,10 @@
+# The Ewoks of The Green Sanctuary
+
+The Green Sanctuary is a forest moon home to the Ewoks, small furry creatures standing about
+        a meter tall. Despite their diminutive stature, Ewoks are fierce warriors with a strong tribal
+        culture. Resources are scarce, and they live in harmony with the forest. The Ewoks were
+        initially hostile to the The Free Alliance but formed an alliance after Princess Leia befriended them.
+        Armed with spears and bows, thousands of Ewoks participated in the Battle of The Green Sanctuary against
+        the The Void Order's forces. They used guerrilla tactics, traps, and the terrain to their advantage,
+        proving that size and technology don't guarantee victory. The Ewoks' victory inspired hope
+        throughout the The Free Alliance.

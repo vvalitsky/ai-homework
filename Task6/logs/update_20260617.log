@@ -1,0 +1,76 @@
+2026-06-17 07:57:48,181 - INFO - Загрузка модели эмбеддингов...
+2026-06-17 07:57:48,215 - INFO - No device provided, using mps
+2026-06-17 07:57:48,447 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:48,479 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:48,630 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:48,631 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 07:57:48,663 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:48,664 - INFO - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-17 07:57:48,818 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:48,851 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:49,002 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:49,038 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-17 07:57:49,190 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:49,226 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:49,403 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:49,436 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:49,593 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 07:57:49,768 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:49,803 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:50,030 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 07:57:50,192 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 07:57:50,348 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 07:57:50,544 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 07:57:50,697 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:50,729 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:50,898 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:50,930 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:51,301 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:51,334 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:51,484 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:51,516 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:51,672 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 07:57:51,830 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 07:57:52,008 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 07:57:52,041 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 07:57:52,199 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-17 07:57:52,559 - INFO - Загрузка существующего индекса из /Users/shademang/Projects/new/aih/Task3/index_output...
+2026-06-17 07:57:52,568 - INFO - ============================================================
+2026-06-17 07:57:52,568 - INFO - Начало обновления индекса
+2026-06-17 07:57:52,568 - INFO - ============================================================
+2026-06-17 07:57:52,569 - INFO - Новый файл: document_001_The_Birth_of_the_Void_Darkling.txt
+2026-06-17 07:57:52,569 - INFO - Новый файл: document_002_Synth_Flux_Explained.txt
+2026-06-17 07:57:52,569 - INFO - Новый файл: document_003_Void_Core_Construction.txt
+2026-06-17 07:57:52,570 - INFO - Новый файл: document_004_The_Void_Sentinels_Order.txt
+2026-06-17 07:57:52,570 - INFO - Новый файл: document_005_The_Synthetic_Being_Wars.txt
+2026-06-17 07:57:52,570 - INFO - Новый файл: document_006_Padmé:_From_Senator_to_Queen.txt
+2026-06-17 07:57:52,571 - INFO - Новый файл: document_007_Skarron_Prime:_Desert_World.txt
+2026-06-17 07:57:52,571 - INFO - Новый файл: document_008_The_Plasma_Blade:_Weapon_of_th.txt
+2026-06-17 07:57:52,571 - INFO - Новый файл: document_009_The_The_Void_Order_Strikes_Bac.txt
+2026-06-17 07:57:52,572 - INFO - Новый файл: document_010_The_Ewoks_of_The_Green_Sanctua.txt
+2026-06-17 07:57:52,572 - INFO - Новый файл: document_011_Malthor_the_Dark:_The_Dark_The.txt
+2026-06-17 07:57:52,573 - INFO - Новый файл: document_012_The_The_Free_Alliance_Forms.txt
+2026-06-17 07:57:52,573 - INFO - Новый файл: document_013_Return_of_the_Void_Sentinels.txt
+2026-06-17 07:57:52,573 - INFO - Новый файл: document_014_Sky_Citadel_Politics.txt
+2026-06-17 07:57:52,573 - INFO - Новый файл: document_015_The_The_Balance_Bearer_Prophec.txt
+2026-06-17 07:57:52,574 - INFO - Новый файл: document_016_The_Order_66_Execution.txt
+2026-06-17 07:57:52,574 - INFO - Новый файл: document_017_Phase_Drift_and_the_The_Silver.txt
+2026-06-17 07:57:52,575 - INFO - Новый файл: document_018_Sage_Conductor_Zoras's_Wisdom.txt
+2026-06-17 07:57:52,575 - INFO - Новый файл: document_019_The_Steel_Titan_Walkers.txt
+2026-06-17 07:57:52,575 - INFO - Новый файл: document_020_Princess_Leia's_Leadership.txt
+2026-06-17 07:57:52,575 - INFO - Новый файл: document_021_Scarif:_The_Hidden_Base.txt
+2026-06-17 07:57:52,576 - INFO - Новый файл: document_022_The_Binary_Star_System.txt
+2026-06-17 07:57:52,576 - INFO - Новый файл: document_023_Stormtrooper_Training.txt
+2026-06-17 07:57:52,576 - INFO - Новый файл: document_024_The_Green_Sanctuary's_Wildlife.txt
+2026-06-17 07:57:52,577 - INFO - Новый файл: document_025_Mon_Mothma_and_Military_Strate.txt
+2026-06-17 07:57:52,577 - INFO - Новый файл: document_026_The_Void_Darklings_Way.txt
+2026-06-17 07:57:52,577 - INFO - Новый файл: document_027_Obi-Wan's_Journey.txt
+2026-06-17 07:57:52,578 - INFO - Новый файл: document_028_The_Rebel_Alliance_Fleet.txt
+2026-06-17 07:57:52,578 - INFO - Новый файл: document_029_The_Void_Viper_Starfighter.txt
+2026-06-17 07:57:52,578 - INFO - Новый файл: document_030_Nexus_Crown:_Heart_of_the_Gala.txt
+2026-06-17 07:57:52,579 - INFO - Новый файл: document_031_The_Trap_at_Sky_Citadel.txt
+2026-06-17 07:57:52,579 - INFO - Новый файл: document_032_Quantum_Leap_Technology.txt
+2026-06-17 07:57:52,579 - INFO - Новый файл: document_033_The_Swamp_of_Whispers.txt
+2026-06-17 07:57:52,579 - INFO - Новый файл: document_034_The_Symbol_of_The_Free_Allianc.txt
+2026-06-17 07:57:52,580 - INFO - Новый файл: document_035_New_Hope_Rises.txt
+2026-06-17 07:57:52,580 - INFO - Новый файл: document_036_The_Final_Battle.txt

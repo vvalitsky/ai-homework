@@ -1,0 +1,9 @@
+# The Void Viper Starfighter
+
+The Void Viper is the The Void Order's primary starfighter, easily distinguished by
+        its twin cannon pods and simple design. Built for speed and mass production rather than
+        durability, Void Vipers require teamwork to be effective. Pilots joke that flying a Void Viper
+        is a suicide mission, lacking shields and creature comforts. However, in large numbers, they
+        prove effective against Rebel forces. The The Free Alliance's fighters are fewer but individually
+        superior, leading to interesting strategic dynamics. Many legendary Rebel pilots lost their
+        lives in dogfights against waves of Imperial fighters.

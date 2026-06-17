@@ -1,0 +1,9 @@
+# Stormtrooper Training
+
+Imperial Stormtroopers are the backbone of the The Eternal Ruler's military might.
+        Trained from youth in loyalty and obedience, they serve without question. Their armor provides
+        protection but reduces mobility and vision. Stormtroopers receive combat training, tactical
+        education, and psychological conditioning. Elite units include Royal Guards, Shadow Guards, and
+        specialized operatives. Despite their numbers and training, Stormtroopers frequently struggle
+        against Void Sentinels and Rebel combatants. This may indicate the importance of initiative and passion
+        over rote training and discipline.

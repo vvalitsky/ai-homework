@@ -1,0 +1,9 @@
+# The Rebel Alliance Fleet
+
+The The Free Alliance commanded a diverse fleet ranging from massive capital ships to
+        fast corvettes. Each ship type served a specific purpose in combined operations. Fighter
+        squadrons consisted of Star Arrows, A-Wings, and Y-Wings. Mon Calamari designed cruisers served
+        as command ships and fleet carriers. The flagship, the Mon Calamari cruiser 'Home One', led
+        operations in many major battles. The The Free Alliance's fleet was outnumbered by the Imperial Navy
+        but compensated through superior tactics and crew quality. Victory came through using smaller
+        ships' maneuverability against larger Imperial vessels.

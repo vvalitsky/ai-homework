@@ -1,0 +1,9 @@
+# Skarron Prime: Desert World
+
+Skarron Prime is a remote desert world on the Outer Rim, orbited by two suns.
+        It is sparsely populated and far from civilized space. The planet is home to Jawas, Tusken
+        Raiders, and settlers seeking a quiet life. Moisture farms dot the arid landscape, collecting
+        water vapor from the air. The cities Mos Eisley and Mos Espa are hubs of smuggling and
+        underworld activity. Kael Starfire grew up on Skarron Prime with his uncle Owen, unaware of his
+        true heritage. The planet appears desolate but holds great significance in the saga, as it
+        marks the beginning of Luke's journey.

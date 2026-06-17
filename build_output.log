@@ -1,0 +1,10 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+============================================================
+Задание 3: Создание векторного индекса
+============================================================
+
+1. Загрузка модели эмбеддингов...
+  Загрузка модели эмбеддингов (это может занять время)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8235.26it/s]
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-26157-hhaimi_k'}
+  warnings.warn(

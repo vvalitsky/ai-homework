@@ -1,0 +1,6 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "total_chunks": 3636,
+  "total_vectors": 3636
+}

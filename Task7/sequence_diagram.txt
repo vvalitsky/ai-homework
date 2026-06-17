@@ -1,0 +1,212 @@
+Task 7: RAG Quality Evaluation - Sequence Diagram
+═════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     RAG EVALUATION SEQUENCE FLOW                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+STEP 1: INITIALIZATION
+══════════════════════
+
+  User
+    │
+    ├──> Load FAISS Index
+    │      │
+    │      ├──> faiss.index (5.2 MB)
+    │      ├──> chunks.json (metadata)
+    │      └──> index_info.json (embedding model)
+    │
+    ├──> Load Embedding Model
+    │      │
+    │      └──> all-MiniLM-L6-v2 (384D vectors)
+    │
+    └──> Load Golden Questions
+           │
+           └──> golden_questions.txt
+                 ├─ 8 "should answer" questions
+                 ├─ 4 "should not answer" questions
+                 └─ Categories: ENTITY, RELATIONSHIP, PLOT, EDGE_CASE
+
+
+STEP 2: QUERY PROCESSING (for each golden question)
+════════════════════════════════════════════════════
+
+  Golden Question
+    │
+    ├──> 1. Generate Query Embedding
+    │      │
+    │      ├──> Text: "Кто такой Каелин Скайфайер?"
+    │      └──> Vector: [0.234, -0.156, ..., 0.891] (384D)
+    │
+    ├──> 2. Search in FAISS Index
+    │      │
+    │      ├──> Similarity search (k=3)
+    │      │     ├─ Chunk 1: distance=0.45 (good match)
+    │      │     ├─ Chunk 2: distance=0.62 (ok match)
+    │      │     └─ Chunk 3: distance=0.78 (weak match)
+    │      │
+    │      └──> Return top-3 chunks ────────────┐
+    │                                           │
+    ├──> 3. Extract & Validate Chunks           │
+    │      │                                    │
+    │      ├─ Chunk 1: "Каелин Скайфайер был..."│
+    │      │   ├─ Source: document_001.txt  ◄───┤
+    │      │   ├─ Title: "The Birth of..."  ◄───┘
+    │      │   └─ Relevance: HIGH
+    │      │
+    │      ├─ Chunk 2: "Его падение произошло..."
+    │      │   └─ Relevance: MEDIUM
+    │      │
+    │      └─ Chunk 3: "Известно, что персонаж..."
+    │          └─ Relevance: LOW
+    │
+    ├──> 4. Build LLM Prompt
+    │      │
+    │      ├──> System Message (Few-shot instructions)
+    │      ├──> Context (top-3 chunks)
+    │      ├──> User Query: "Кто такой Каелин Скайфайер?"
+    │      └──> Generate Answer (via LLM)
+    │
+    ├──> 5. Log Query Result
+    │      │
+    │      ├──> Timestamp: 2026-06-17T10:30:00
+    │      ├──> Query: "Кто такой Каелин Скайфайер?"
+    │      ├──> Found chunks: 3
+    │      ├──> Sources: [document_001.txt, document_005.txt]
+    │      ├──> Answer length: 247 chars
+    │      ├──> Expected keywords: [Каелин, Скайфайер, персонаж]
+    │      ├──> Found keywords: 3/3 ✓
+    │      ├──> Success: YES
+    │      └──> Coverage: 100%
+    │
+    └──> 6. Evaluate Result
+           │
+           ├─ Coverage Check:
+           │  ├─ Expected: Каелин, Скайфайер, персонаж
+           │  └─ Found: Каелин[✓], Скайфайер[✓], персонаж[✓]
+           │
+           ├─ Relevance Check:
+           │  ├─ Top chunk distance: 0.45 (GOOD)
+           │  ├─ Sources match domain: YES
+           │  └─ Answer is coherent: YES
+           │
+           ├─ Security Check:
+           │  ├─ Contains injection: NO
+           │  ├─ Follows instructions: YES
+           │  └─ Safe to return: YES
+           │
+           └─ Result: ✓ PASS
+
+
+STEP 3: HANDLING COVERAGE GAPS (fail case)
+═══════════════════════════════════════════
+
+  Question: "Какая информация есть о VoidCore?"
+    │
+    ├──> Generate Embedding
+    │      └──> Vector: [0.145, 0.267, ..., -0.123]
+    │
+    ├──> Search FAISS Index
+    │      │
+    │      └──> NO RELEVANT DOCUMENTS FOUND
+    │             ├─ Closest chunk distance: > 1.5
+    │             ├─ Threshold check: FAILED (> 0.9)
+    │             └─ Return: EMPTY (no chunks)
+    │
+    ├──> Build Honest Refusal Prompt
+    │      │
+    │      └──> "Я не нашел информацию по этой теме"
+    │
+    ├──> Log Gap Discovery
+    │      │
+    │      ├──> Query: "Какая информация есть о VoidCore?"
+    │      ├──> Found chunks: 0
+    │      ├──> Sources: []
+    │      ├──> Success: NO
+    │      ├──> Gap Category: MISSING_ENTITY
+    │      ├──> Recommendation: "Add VoidCore entity to knowledge base"
+    │      └──> Coverage: 0%
+    │
+    └──> Add to Gaps Analysis
+           └──> gaps_analysis.json
+
+
+STEP 4: ANALYSIS & REPORTING
+═════════════════════════════
+
+  Collect All Results
+    │
+    ├──> Parse logs.jsonl
+    │      ├─ 12 queries processed
+    │      ├─ 8 successful (67%)
+    │      ├─ 4 failed (33%)
+    │      └─ Avg answer length: 189 chars
+    │
+    ├──> Identify Poorly Covered Topics
+    │      ├─ VoidCore: 0% coverage
+    │      ├─ Security topics: 0% coverage
+    │      └─ Technical details: 0% coverage
+    │
+    ├──> Generate Gaps Analysis
+    │      ├──> poorly_covered_topics:
+    │      │    ├─ VoidCore (0% success)
+    │      │    └─ Technical details (0% success)
+    │      │
+    │      └──> missing_entities:
+    │           ├─ VoidCore
+    │           └─ Advanced API docs
+    │
+    ├──> Generate Quality Metrics
+    │      ├─ Top-K Accuracy: 85% (7/8 should-answer queries correct)
+    │      ├─ False Positives: 0% (0 wrong answers to gap queries)
+    │      ├─ Answer Completeness: 92% (avg keyword coverage)
+    │      └─ Latency: 0.3s avg
+    │
+    └──> Generate Report
+           ├──> quality_report.json
+           ├──> gaps_analysis.json
+           └──> coverage_summary.txt
+
+
+STEP 5: RECOMMENDATIONS
+═══════════════════════
+
+  Analysis Results
+    │
+    ├──> High Priority:
+    │      ├─ Add VoidCore documentation (3 questions fail)
+    │      └─ Improve Synth Flux coverage (partial answers)
+    │
+    ├──> Medium Priority:
+    │      ├─ Add more Character backstories
+    │      └─ Expand Faction relationships
+    │
+    └──> Low Priority:
+           └──> Polish existing content for clarity
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+KEY DECISION POINTS IN FLOW:
+────────────────────────────
+
+1. Empty Search Result → Honest Refusal (not hallucination)
+2. Low Relevance Score → Gap Detection (topic missing)
+3. Keyword Coverage < 50% → Partial Answer (incomplete knowledge)
+4. Security Pattern Detected → Injection Refused (safe mode)
+5. Multiple Sources Found → Improve Answer Quality (cross-reference)
+
+═════════════════════════════════════════════════════════════════════════════
+
+QUALITY GATES:
+──────────────
+
+Evaluate at these checkpoints:
+  ✓ Chunk Retrieval: Are top-3 chunks relevant?
+  ✓ Source Validation: Does source exist and match query?
+  ✓ Keyword Coverage: Are expected keywords present?
+  ✓ Answer Length: Is answer substantial (>100 chars)?
+  ✓ Security: No harmful content or injection?
+  ✓ Coherence: Is answer grammatically correct?
+
+═════════════════════════════════════════════════════════════════════════════

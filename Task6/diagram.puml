@@ -1,0 +1,82 @@
+@startuml Task6_Architecture
+!define COLORDATA #E1F5FF
+!define COLORPROCESS #FFF3E0
+!define COLORSTORAGE #F3E5F5
+!define COLORLOG #E8F5E9
+
+title Task 6: Архитектура автоматического обновления индекса
+
+' Источники данных
+package "Источники данных" #COLORDATA {
+    component [Локальная папка\n../Task2/\nknowledge_base] as LocalFS
+    component [Git Repository\n(новые коммиты)] as GitRepo
+    component [S3 / Google Drive\nи т.д.] as CloudStorage
+}
+
+' Скрипт обновления
+package "Скрипт обновления\n(update_index.py)" #COLORPROCESS {
+    component [Сканирование\nисточника] as Scanner
+    component [Вычисление хешей\n(MD5/SHA256)] as HashCompute
+    component [Сравнение с кешем\n(history.json)] as Compare
+    component [DocumentChunker\n(2000 символов)] as Chunker
+    component [EmbeddingGenerator\n(all-MiniLM-L6-v2)] as Embedder
+    component [IndexUpdater\n(FAISS)] as IndexUpdater
+}
+
+' Хранилище
+package "Хранилище данных" #COLORSTORAGE {
+    database "FAISS Index\n(faiss.index)" as FAISSIndex
+    component [Chunks Metadata\n(chunks.json)] as ChunksJSON
+    component [Index Info\n(index_info.json)] as IndexInfo
+    component [History Cache\n(history.json)] as HistoryCache
+}
+
+' Логирование
+package "Логирование" #COLORLOG {
+    component [Log File\n(logs/update_YYYYMMDD.log)] as LogFile
+}
+
+' Планировщик
+package "Периодический запуск" {
+    component [Cron Task\n(0 6 * * *)] as CronTask
+    component [Manual Trigger\n(bash run.sh)] as ManualTrigger
+}
+
+' Интерфейс управления
+package "Интерфейс управления" {
+    component [run.sh Menu] as RunMenu
+}
+
+' Связи
+LocalFS --> Scanner
+GitRepo --> Scanner
+CloudStorage --> Scanner
+
+Scanner --> HashCompute
+HashCompute --> Compare
+HistoryCache --> Compare
+
+Compare --> Chunker : новые документы
+Chunker --> Embedder
+Embedder --> IndexUpdater
+
+IndexUpdater --> FAISSIndex
+IndexUpdater --> ChunksJSON
+IndexUpdater --> IndexInfo
+IndexUpdater --> HistoryCache
+
+Scanner --> LogFile
+HashCompute --> LogFile
+Compare --> LogFile
+Chunker --> LogFile
+Embedder --> LogFile
+IndexUpdater --> LogFile
+
+CronTask --> Scanner : ежедневно в 06:00
+ManualTrigger --> Scanner : по запросу
+
+RunMenu --> ManualTrigger
+RunMenu --> LogFile : просмотр
+RunMenu --> FAISSIndex : статистика
+
+@enduml
