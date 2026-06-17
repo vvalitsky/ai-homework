@@ -13,7 +13,7 @@ import logging
 import hashlib
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 import sys
 
 try:
@@ -88,8 +88,8 @@ class IndexUpdater:
 
     def __init__(
         self,
-        docs_source: str = "../../Task2/knowledge_base",
-        index_dir: str = "../../Task3/index_output",
+        docs_source: Optional[str] = None,
+        index_dir: Optional[str] = None,
         index_state_file: str = "index_state.json"
     ):
         """
@@ -98,22 +98,41 @@ class IndexUpdater:
             index_dir: директория с FAISS индексом
             index_state_file: файл для отслеживания состояния документов
         """
+        # Resolve paths to absolute paths
+        if docs_source is None:
+            script_dir = Path(__file__).parent.absolute()
+            project_root = script_dir.parent
+            docs_source = project_root / "Task2" / "knowledge_base"
+        else:
+            docs_source = Path(docs_source)
+
+        if index_dir is None:
+            script_dir = Path(__file__).parent.absolute()
+            project_root = script_dir.parent
+            index_dir = project_root / "Task3" / "index_output"
+        else:
+            index_dir = Path(index_dir)
+
         self.docs_source = docs_source
         self.index_dir = index_dir
         self.index_state_file = index_state_file
 
-        # Загрузить модель рмодель
+        # Загрузить модель
         logger.info("Загрузка модели эмбеддингов...")
         self.model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
         self.embedding_dim = self.model.get_embedding_dimension()
 
         # Загрузить существующий индекс
-        logger.info("Загрузка существующего индекса...")
-        index_path = os.path.join(index_dir, "faiss.index")
-        self.index = faiss.read_index(index_path)
+        logger.info(f"Загрузка существующего индекса из {index_dir}...")
+        index_path = index_dir / "faiss.index"
+        if not index_path.exists():
+            raise FileNotFoundError(f"FAISS индекс не найден: {index_path}")
+        self.index = faiss.read_index(str(index_path))
 
         # Загрузить чанки
-        chunks_path = os.path.join(index_dir, "chunks.json")
+        chunks_path = index_dir / "chunks.json"
+        if not chunks_path.exists():
+            raise FileNotFoundError(f"chunks.json не найден: {chunks_path}")
         with open(chunks_path, 'r') as f:
             self.chunks = json.load(f)
 

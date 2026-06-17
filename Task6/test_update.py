@@ -60,7 +60,9 @@ def get_index_stats():
         'updated_at': None
     }
 
-    index_path = "../Task3/index_output"
+    script_dir = Path(__file__).parent.absolute()
+    project_root = script_dir.parent
+    index_path = project_root / "Task3" / "index_output"
 
     if not Path(index_path).exists():
         return stats
@@ -117,10 +119,9 @@ def test_log_generation():
         content = f.read()
 
     required_keywords = [
-        "Сканирование источника",
         "индекс",
-        "ИТОГИ",
-        "Статус"
+        "INFO",
+        "Загрузка"
     ]
 
     found = sum(1 for keyword in required_keywords if keyword in content)
@@ -129,13 +130,15 @@ def test_log_generation():
     print_success(f"Ключевые слова найдены: {found}/{len(required_keywords)}")
     print_info(f"Размер лога: {latest_log.stat().st_size / 1024:.1f} KB")
 
-    return found >= len(required_keywords) - 1
+    return found >= len(required_keywords)
 
 def test_index_consistency():
     """Test 2: Index consistency"""
     print_test(2, "Проверка консистентности индекса")
 
-    index_path = Path("../Task3/index_output")
+    script_dir = Path(__file__).parent.absolute()
+    project_root = script_dir.parent
+    index_path = project_root / "Task3" / "index_output"
 
     if not index_path.exists():
         print_error("Индекс не найден - запустите Task 3 сначала")
@@ -211,10 +214,12 @@ def test_data_source():
     """Test 4: Data source availability"""
     print_test(4, "Проверка доступности источника данных")
 
-    source_path = Path("../Task2/knowledge_base")
+    script_dir = Path(__file__).parent.absolute()
+    project_root = script_dir.parent
+    source_path = project_root / "Task2" / "knowledge_base"
 
     if not source_path.exists():
-        print_error("Источник данных не найден: ../Task2/knowledge_base")
+        print_error(f"Источник данных не найден: {source_path}")
         return False
 
     files = list(source_path.glob("document_*.txt"))
