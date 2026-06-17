@@ -1,0 +1,310 @@
+{
+  "timestamp": "2026-06-17T05:26:17.192752",
+  "total_queries": 9,
+  "successful_answers": 9,
+  "successful_rate": 1.0,
+  "accurate_answers": 0,
+  "correct_rejections": 0,
+  "queries_that_should_answer": 6,
+  "queries_that_shouldnt_answer": 3,
+  "recall": 1.5,
+  "specificity": 0.0,
+  "details": [
+    {
+      "query": "Кто такой Каелин Скайфайер?",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.5820931196212769,
+      "associated_keywords": [
+        "Каелин",
+        "Скайфайер",
+        "Кайелин"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "mination.",
+          "source": "document_019_The_Steel_Titan_Walkers.txt",
+          "title": "The Steel Titan Walkers",
+          "distance": 1.5820931196212769
+        },
+        {
+          "text": "ictory.",
+          "source": "document_018_Sage_Conductor_Zoras's_Wisdom.txt",
+          "title": "Sage Conductor Zoras's Wisdom",
+          "distance": 1.5884119272232056
+        },
+        {
+          "text": "ictory.",
+          "source": "document_021_Scarif:_The_Hidden_Base.txt",
+          "title": "Scarif: The Hidden Base",
+          "distance": 1.5884119272232056
+        }
+      ],
+      "should_answer": true
+    },
+    {
+      "query": "Какова была цель Вакуум Ядра?",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.4788140058517456,
+      "associated_keywords": [
+        "Вакуум",
+        "Ядра",
+        "уничтожить",
+        "планеты"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "ce.",
+          "source": "document_010_The_Ewoks_of_The_Green_Sanctua.txt",
+          "title": "The Ewoks of The Green Sanctuary",
+          "distance": 1.4788140058517456
+        },
+        {
+          "text": "ce.",
+          "source": "document_013_Return_of_the_Void_Sentinels.txt",
+          "title": "Return of the Void Sentinels",
+          "distance": 1.4788140058517456
+        },
+        {
+          "text": "ce.",
+          "source": "document_020_Princess_Leia's_Leadership.txt",
+          "title": "Princess Leia's Leadership",
+          "distance": 1.4788140058517456
+        }
+      ],
+      "should_answer": true
+    },
+    {
+      "query": "Расскажи про Свободный Альянс",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.3788050413131714,
+      "associated_keywords": [
+        "Свободный",
+        "Альянс",
+        "Альянса"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "ermination.",
+          "source": "document_019_The_Steel_Titan_Walkers.txt",
+          "title": "The Steel Titan Walkers",
+          "distance": 1.3788050413131714
+        },
+        {
+          "text": "r's\n        tyranny.",
+          "source": "document_012_The_The_Free_Alliance_Forms.txt",
+          "title": "The The Free Alliance Forms",
+          "distance": 1.4141159057617188
+        },
+        {
+          "text": "rs.",
+          "source": "document_029_The_Void_Viper_Starfighter.txt",
+          "title": "The Void Viper Starfighter",
+          "distance": 1.4258487224578857
+        }
+      ],
+      "should_answer": true
+    },
+    {
+      "query": "Что такое Синтез Поток?",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.6042771339416504,
+      "associated_keywords": [
+        "Синтез",
+        "Поток",
+        "энергия",
+        "живые"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "rmination.",
+          "source": "document_019_The_Steel_Titan_Walkers.txt",
+          "title": "The Steel Titan Walkers",
+          "distance": 1.6042771339416504
+        },
+        {
+          "text": "ictory.",
+          "source": "document_018_Sage_Conductor_Zoras's_Wisdom.txt",
+          "title": "Sage Conductor Zoras's Wisdom",
+          "distance": 1.6104217767715454
+        },
+        {
+          "text": "ictory.",
+          "source": "document_021_Scarif:_The_Hidden_Base.txt",
+          "title": "Scarif: The Hidden Base",
+          "distance": 1.6104217767715454
+        }
+      ],
+      "should_answer": true
+    },
+    {
+      "query": "Опишите Пустотные Дозорники",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.4926100969314575,
+      "associated_keywords": [
+        "Пустотные",
+        "Дозорники",
+        "Дозорники",
+        "порядок"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "er's\n        tyranny.",
+          "source": "document_012_The_The_Free_Alliance_Forms.txt",
+          "title": "The The Free Alliance Forms",
+          "distance": 1.4926100969314575
+        },
+        {
+          "text": "der's\n        tyranny.",
+          "source": "document_012_The_The_Free_Alliance_Forms.txt",
+          "title": "The The Free Alliance Forms",
+          "distance": 1.4941329956054688
+        },
+        {
+          "text": "r's\n        tyranny.",
+          "source": "document_012_The_The_Free_Alliance_Forms.txt",
+          "title": "The The Free Alliance Forms",
+          "distance": 1.5343549251556396
+        }
+      ],
+      "should_answer": true
+    },
+    {
+      "query": "Как работает Плазменный Клинок?",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.581828236579895,
+      "associated_keywords": [
+        "Плазменный",
+        "Клинок",
+        "оружие",
+        "лезвие"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "rs.",
+          "source": "document_029_The_Void_Viper_Starfighter.txt",
+          "title": "The Void Viper Starfighter",
+          "distance": 1.581828236579895
+        },
+        {
+          "text": "der.",
+          "source": "document_003_Void_Core_Construction.txt",
+          "title": "Void Core Construction",
+          "distance": 1.5903897285461426
+        },
+        {
+          "text": "der.",
+          "source": "document_006_Padmé:_From_Senator_to_Queen.txt",
+          "title": "Padmé: From Senator to Queen",
+          "distance": 1.5903897285461426
+        }
+      ],
+      "should_answer": true
+    },
+    {
+      "query": "Расскажи про неизвестную империю Абрадакабра",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.532187581062317,
+      "associated_keywords": [
+        "Абრадакабра",
+        "неизвестная"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "rs.",
+          "source": "document_029_The_Void_Viper_Starfighter.txt",
+          "title": "The Void Viper Starfighter",
+          "distance": 1.532187581062317
+        },
+        {
+          "text": "rmination.",
+          "source": "document_019_The_Steel_Titan_Walkers.txt",
+          "title": "The Steel Titan Walkers",
+          "distance": 1.5400017499923706
+        },
+        {
+          "text": "r.",
+          "source": "document_001_The_Birth_of_the_Void_Darkling.txt",
+          "title": "The Birth of the Void Darklings",
+          "distance": 1.5521132946014404
+        }
+      ],
+      "should_answer": false
+    },
+    {
+      "query": "Какова история планеты Несужествиум?",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.4391974210739136,
+      "associated_keywords": [
+        "Несужествиум"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "rmination.",
+          "source": "document_019_The_Steel_Titan_Walkers.txt",
+          "title": "The Steel Titan Walkers",
+          "distance": 1.4391974210739136
+        },
+        {
+          "text": "ermination.",
+          "source": "document_019_The_Steel_Titan_Walkers.txt",
+          "title": "The Steel Titan Walkers",
+          "distance": 1.520673155784607
+        },
+        {
+          "text": "er's\n        tyranny.",
+          "source": "document_012_The_The_Free_Alliance_Forms.txt",
+          "title": "The The Free Alliance Forms",
+          "distance": 1.5548934936523438
+        }
+      ],
+      "should_answer": false
+    },
+    {
+      "query": "Кто объявил войну Мегаимперии?",
+      "found": true,
+      "results_count": 3,
+      "top_result_distance": 1.557747483253479,
+      "associated_keywords": [
+        "Мегаимперии"
+      ],
+      "accuracy": false,
+      "results": [
+        {
+          "text": "estiny.",
+          "source": "document_027_Obi-Wan's_Journey.txt",
+          "title": "Obi-Wan's Journey",
+          "distance": 1.557747483253479
+        },
+        {
+          "text": "e Void Order.",
+          "source": "document_003_Void_Core_Construction.txt",
+          "title": "Void Core Construction",
+          "distance": 1.6045734882354736
+        },
+        {
+          "text": "e Void Order.",
+          "source": "document_006_Padmé:_From_Senator_to_Queen.txt",
+          "title": "Padmé: From Senator to Queen",
+          "distance": 1.6045734882354736
+        }
+      ],
+      "should_answer": false
+    }
+  ]
+}

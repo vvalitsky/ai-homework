@@ -1,0 +1,66 @@
+# Конфигурация cron для автоматического обновления RAG индекса
+#
+# Использование:
+#   cat crontab_config.txt >> /etc/crontab
+# или
+#   crontab -e
+#   [вставить эти строки]
+
+# # ============================================================
+# # RAG Index Auto-Update Schedule
+# # ============================================================
+
+# Ежедневное обновление в 6:00 AM (перед рабочим днём)
+0 6 * * * cd /home/user/ai-homework && /home/user/ai-homework/.venv/bin/python3 Task6/update_index.py >> logs/update_cron.log 2>&1
+
+# Еженедельное полное переиндексирование (по воскресеньям в 3:00 AM)
+0 3 * * 0 cd /home/user/ai-homework && /home/user/ai-homework/.venv/bin/python3 Task6/rebuild_index.py >> logs/rebuild_cron.log 2>&1
+
+# Ежечасная проверка новых документов (быстрая версия)
+0 * * * * cd /home/user/ai-homework && /home/user/ai-homework/.venv/bin/python3 Task6/check_updates.py >> logs/check_cron.log 2>&1
+
+# # ПРИМЕЧАНИЯ:
+# #
+# # 1. Замените /home/user/ai-homework на ваш путь к проекту
+# # 2. Убедитесь, что .venv активирован правильно
+# # 3. Проверьте перемissions директорий (chmod 755)
+# # 4. Логи сохраняются в logs/ директорию
+# #
+# # Для проверки текущих cron задач:
+# #   crontab -l
+# #
+# # Для редактирования cron:
+# #   crontab -e
+# #
+# # Для удаления всех cron задач:
+# #   crontab -r
+
+# # ============================================================
+# # Docker версия (если используется docker-compose)
+# # ============================================================
+# #
+# # Запуск обновления внутри Docker контейнера:
+# #
+# # 0 6 * * * docker exec rag-bot-api python3 Task6/update_index.py
+# #
+# # ============================================================
+# # Kubernetes версия (если используется K8s)
+# # ============================================================
+# #
+# # apiVersion: batch/v1
+# # kind: CronJob
+# # metadata:
+# #   name: rag-index-update
+# # spec:
+# #   schedule: "0 6 * * *"
+# #   jobTemplate:
+# #     spec:
+# #       template:
+# #         spec:
+# #           containers:
+# #           - name: rag-updater
+# #             image: rag-bot:latest
+# #             command: ["python3", "Task6/update_index.py"]
+# #           restartPolicy: OnFailure
+# #
+# # ============================================================

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  rag-bot:
+    build: .
+    container_name: rag-bot-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Task3/index_output:/app/index_output:ro
+      - ./Task2/knowledge_base:/app/knowledge_base:ro
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+      - INDEX_DIR=/app/index_output
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - rag-network
+
+  faiss-volume:
+    image: alpine:latest
+    container_name: faiss-storage
+    volumes:
+      - faiss-data:/data
+    command: sh -c "echo 'FAISS storage container' && tail -f /dev/null"
+    networks:
+      - rag-network
+
+networks:
+  rag-network:
+    driver: bridge
+
+volumes:
+  faiss-data:
